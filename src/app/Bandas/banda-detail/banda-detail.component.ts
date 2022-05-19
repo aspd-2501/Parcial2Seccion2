@@ -2,7 +2,7 @@ import { Component, OnInit, Input} from '@angular/core';
 import { Banda } from '../banda';
 
 @Component({
-  selector: 'app-bandas-detail',
+  selector: 'app-banda-detail',
   templateUrl: './banda-detail.component.html',
   styleUrls: ['./banda-detail.component.css']
 })
