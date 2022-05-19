@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Banda } from './banda';
+
+import { BandaService } from './banda.service';
 
 @Component({
   selector: 'app-Bandas',
@@ -6,10 +9,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./Bandas.component.css']
 })
 export class BandasComponent implements OnInit {
+  bandas: Array<Banda> = [];
+  average = 0;
 
-  constructor() { }
+  selectedBanda!: Banda;
+  selected = false;
 
-  ngOnInit() {
-  }
+ onSelected(banda: Banda): void
+ {
+   this.selected = true;
+   this.selectedBanda = banda;
+ }
+
+ constructor(private bandaService: BandaService) { }
+
+ getBandasList()
+ {
+   this.bandaService.getBandas().subscribe(bandas => {
+     bandas.forEach(banda => {
+       this.average += banda.seasons;
+     })
+     this.average = this.average / bandas.length;
+     this.bandas = bandas;});
+ }
+
+
+
+ ngOnInit() {
+   this.getBandasList()
+ }
 
 }
