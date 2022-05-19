@@ -10,7 +10,7 @@ import { BandaService } from './banda.service';
 })
 export class BandasComponent implements OnInit {
   bandas: Array<Banda> = [];
-  average = 0;
+  averageMembers = 0;
 
   selectedBanda!: Banda;
   selected = false;
@@ -27,9 +27,9 @@ export class BandasComponent implements OnInit {
  {
    this.bandaService.getBandas().subscribe(bandas => {
      bandas.forEach(banda => {
-       this.average += banda.seasons;
+       this.averageMembers += banda.numberOfMembers;
      })
-     this.average = this.average / bandas.length;
+     this.averageMembers = Math.round(this.averageMembers / bandas.length);
      this.bandas = bandas;});
  }
 

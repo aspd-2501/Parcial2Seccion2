@@ -1,3 +1,27 @@
-<p>
-  Bandas works!
-</p>
+<div class="container-fluid">
+  <div class="col-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Number of members</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr (click)="onSelected(b)" *ngFor="let b of bandas">
+          <td><dd>{{ b.id }}</dd></td>
+          <td><dd>{{ b.name }}</dd></td>
+          <td><dd>{{ b.numberOfMemebers }}</dd></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Average number of members (rounded up): {{averageMemebers}}</p>
+  </div>
+  <div class="col-sm-4">
+    <div *ngIf="selected">
+      <app-banda-detail [selectedBanda]= "selectedBanda" ></app-banda-detail>
+    </div>
+  </div>
+</div>

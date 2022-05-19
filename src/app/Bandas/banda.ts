@@ -1,7 +1,7 @@
 export class Banda {
   id: number;
   name: String;
-  numberOfMemebers: number;
+  numberOfMembers: number;
   description: String;
   popularSongs: Array<String>;
   image: String;
@@ -11,7 +11,7 @@ export class Banda {
   {
     this.id = id;
     this.name = name;
-    this.numberOfMemebers = numberOfMemebers;
+    this.numberOfMembers = numberOfMemebers;
     this.description = description;
     this.popularSongs = popularSongs;
     this.image = image;

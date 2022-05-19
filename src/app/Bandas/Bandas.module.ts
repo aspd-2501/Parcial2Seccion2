@@ -4,7 +4,8 @@ import { BandasComponent } from './Bandas.component';
 import { BandaDetailComponent } from './banda-detail/banda-detail.component';
 import { BandaService } from './banda.service';
 
-@NgModule({
+@NgModule
+({
   imports: [
     CommonModule
   ],
@@ -12,4 +13,5 @@ import { BandaService } from './banda.service';
   exports: [BandasComponent],
   providers: [BandaService]
 })
+
 export class BandasModule { }
